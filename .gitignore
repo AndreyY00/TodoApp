@@ -5,10 +5,10 @@ frontend/.angular/
 frontend/out-tsc/
 
 # .NET
-Backend/**/bin/
-Backend/**/obj/
-Backend/**/.vs/
-**/.vs/
+backend/**/bin/
+backend/**/obj/
+backend/**/.vs/
+*.user
 
 # General
 .DS_Store
