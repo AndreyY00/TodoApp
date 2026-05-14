@@ -1,0 +1,134 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <h1>TodoApp</h1>
+      </div>
+      <div class="stats">
+        <span class="stat">
+          <strong>{{ pendingCount }}</strong> pending
+        </span>
+        <span class="stat-divider">·</span>
+        <span class="stat">
+          <strong>{{ completedCount }}</strong> done
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Error Banner -->
+    @if (errorMessage()) {
+      <div class="error-banner" role="alert">
+        <span>{{ errorMessage() }}</span>
+        <button class="dismiss-btn" (click)="dismissError()">✕</button>
+      </div>
+    }
+
+    <!-- Add Task Input -->
+    <section class="add-section">
+      <div class="input-row">
+        <input
+          class="task-input"
+          type="text"
+          placeholder="Add a new task..."
+          [(ngModel)]="newTitle"
+          (keydown)="handleKeydown($event)"
+          maxlength="200"
+          aria-label="New task title"
+        />
+        <button
+          class="add-btn"
+          (click)="addTodo()"
+          [disabled]="!newTitle.trim()"
+          aria-label="Add task"
+        >
+          <span>Add</span>
+          <span class="add-icon">+</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading State -->
+    @if (isLoading()) {
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <span>Loading tasks...</span>
+      </div>
+    }
+
+    <!-- Empty State -->
+    @if (!isLoading() && todos().length === 0) {
+      <div class="empty-state">
+        <div class="empty-icon">○</div>
+        <p class="empty-title">No tasks yet</p>
+        <p class="empty-sub">Add your first task above to get started.</p>
+      </div>
+    }
+
+    <!-- Todo List -->
+    @if (!isLoading() && todos().length > 0) {
+      <section class="todo-section">
+        <ul class="todo-list" role="list">
+          @for (todo of todos(); track todo.id) {
+            <li class="todo-item"
+              [class.completed]="todo.isCompleted"
+              [class.editing]="editingId() === todo.id"
+            >
+              <!-- Complete button — disabled while editing -->
+              <button
+                class="check-btn"
+                (click)="toggleComplete(todo)"
+                [attr.aria-label]="todo.isCompleted ? 'Mark as pending' : 'Mark as done'"
+                [class.checked]="todo.isCompleted"
+                [disabled]="editingId() === todo.id"
+              >
+                @if (todo.isCompleted) { ✓ }
+              </button>
+
+              <!-- Read mode: shows the task title -->
+              @if (editingId() !== todo.id) {
+                <span class="todo-title">{{ todo.task }}</span>
+              }
+
+              <!-- Edit mode: shows the inline input -->
+              @if (editingId() === todo.id) {
+                <input
+                  class="edit-input"
+                  type="text"
+                  [(ngModel)]="editingTitle"
+                  (keydown)="handleEditKeydown($event, todo)"
+                  maxlength="200"
+                  aria-label="Edit task"
+                  #editInput
+                />
+              }
+
+              <!-- Edit button — switches to save (✓) while editing -->
+              <button
+                class="edit-btn"
+                [class.save-mode]="editingId() === todo.id"
+                (click)="editingId() === todo.id ? saveEdit(todo) : startEdit(todo)"
+                [attr.aria-label]="editingId() === todo.id ? 'Save' : 'Edit'"
+              >
+                @if (editingId() === todo.id) { ✓ } @else { ✎ }
+              </button>
+
+              <!-- Delete button — switches to cancel (✕) while editing -->
+              <button
+                class="delete-btn"
+                (click)="editingId() === todo.id ? cancelEdit() : deleteTodo(todo.id)"
+                [attr.aria-label]="editingId() === todo.id ? 'Cancel' : 'Delete'"
+              >
+                ✕
+              </button>
+            </li>
+          }
+        </ul>
+      </section>
+    }
+
+  </main>
+</div>

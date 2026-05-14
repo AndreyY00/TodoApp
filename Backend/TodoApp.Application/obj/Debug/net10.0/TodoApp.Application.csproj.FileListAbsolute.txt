@@ -1,0 +1,16 @@
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net10.0\TodoApp.Application.deps.json
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net10.0\TodoApp.Application.dll
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net10.0\TodoApp.Application.pdb
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net10.0\TodoApp.Domain.dll
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net10.0\TodoApp.Domain.pdb
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp..05D78BBE.Up2Date
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.dll
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\refint\TodoApp.Application.dll
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.pdb
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\ref\TodoApp.Application.dll
+C:\Users\andre\OneDrive\Documentos\TodoApp\TodoApp\TodoApp.Application\obj\Debug\net10.0\TodoApp.Application.sourcelink.json
